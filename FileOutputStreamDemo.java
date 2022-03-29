@@ -48,7 +48,7 @@ public class FileOutputStreamDemo {
 	{
 		try {File home = FileSystemView.getFileSystemView().getHomeDirectory();
 		String desktop=home.getAbsolutePath();
-		String desktop1=desktop+"/"+fname;
+		String desktop1=desktop+"//"+fname;
 			fis=new FileInputStream(desktop1);
 			int data;
 			System.out.println("");
@@ -79,7 +79,7 @@ public class FileOutputStreamDemo {
 	public void deleteF(String fname)
 	{	File home = FileSystemView.getFileSystemView().getHomeDirectory();
 	String desktop=home.getAbsolutePath();
-	String desktop1=desktop+"/"+fname;
+	String desktop1=desktop+"//"+fname;
 		File f=new File(desktop1);
 		
 		if(f.delete())
@@ -91,7 +91,7 @@ public class FileOutputStreamDemo {
 	public void searchFound(String fname)
 	{	File home = FileSystemView.getFileSystemView().getHomeDirectory();
 	String desktop=home.getAbsolutePath();
-	String desktop1=desktop+"/"+fname;
+	String desktop1=desktop+"//"+fname;
 		File f=new File(desktop1);
 		if(f.exists())
 			System.out.println("The file " +fname+" is found.");
