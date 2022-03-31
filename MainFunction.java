@@ -31,12 +31,15 @@ public class MainFunction {
 		System.out.println("Desktop File Names : "+ treeSet);
 		System.out.println();
 
-		try
-		{ 	System.out.println();
+		 	System.out.println();
 			System.out.println("Your selection(Number between 0 & 2): ");
 		Scanner input=new Scanner(System.in);
+		while(!input.hasNextInt())
+		{
+			System.out.println("Enter number between 0 & 2!!!");
+			input.next();
+		}
 		response=input.nextInt();
-		
 		while(response!=0)
 		{
 			if(response<1 || response>3)
@@ -64,6 +67,11 @@ public class MainFunction {
 							
 							genric.MenuBusinessLogic();
 							System.out.println("Enter your choice (NUMBER bewtween 1 & 5):");
+							while(!input.hasNextInt())
+							{
+								System.out.println("Enter number between 1 & 5!!!");
+								input.next();
+							}
 							 res=input.nextInt();
 							
 							while(res!=5)
@@ -111,7 +119,7 @@ public class MainFunction {
 												System.out.println("All files are  shown: ");
 												System.out.println(treeSet);
 												System.out.println();
-												System.out.println("Enter Display file Name: ");
+												System.out.println("Display file: ");
 												fileName=input.nextLine();
 												fileName+=input.nextLine();
 												genric.showContent(fileName);
@@ -123,6 +131,11 @@ public class MainFunction {
 									}
 							
 							System.out.println("Select Option (NUMBER between 1 & 5):");
+							while(!input.hasNextInt())
+							{
+								System.out.println("Enter number between 1 & 5!!!");
+								input.next();
+							}
 							res=input.nextInt();
 							
 							}
@@ -136,24 +149,24 @@ public class MainFunction {
 					
 				}
 			System.out.println("Select Option(NUMBER between 0 & 2): ");
+			while(!input.hasNextInt())
+			{
+				System.out.println("Enter number between 0 & 2!!!");
+				input.next();
+			}
 			response=input.nextInt();
 	
 		
 		}
-	}
-		catch(InputMismatchException e)
-		{
-			System.out.println("Enter NUMBER PLEASE!!!!!");
-		}
-		
-		finally {
+	
+	
 		if(response==0)
 			{
 			System.out.println();
 			System.out.println("Thank you for using this application. You have been suceesfully EXITED.");
 			}
 			
-		}
+		
 	}
 	
 
