@@ -27,25 +27,22 @@ public class MainFunction {
 		}
 		System.out.println("Files already present in DESKTOP");
 		System.out.println("Total Files:" +treeSet.size()); 
-		System.out.println("File Name : "+ treeSet);
 		System.out.println();
-//		System.out.println("File on DESKTOP are--------------------------------------------------------------------");
-//		System.out.println();
-//		for(String tree:treeSet)
-//		System.out.println(tree);
-//		System.out.println();
-//		System.out.println("--------------------------------------------------------------------");
-//		System.out.println();
-//		genric.GenricDisplay();
+		System.out.println("Desktop File Names : "+ treeSet);
+		System.out.println();
+
 		try
-		{ System.out.println("Your selection(Number): ");
+		{ 	System.out.println();
+			System.out.println("Your selection(Number between 0 & 2): ");
 		Scanner input=new Scanner(System.in);
 		response=input.nextInt();
 		
 		while(response!=0)
 		{
 			if(response<1 || response>3)
-				System.out.println("please enter between 0 & 2");
+				{
+				System.out.println("NOTE: please enter between 0 & 2");
+				}
 			else
 				switch(response)
 				{
@@ -61,48 +58,62 @@ public class MainFunction {
 						}
 						break;
 				case 2://Business Level logic
-						{
+						{	System.out.println();
 							System.out.println("Going in Business Level logic");
 							//calling class method
 							
 							genric.MenuBusinessLogic();
-							System.out.println("Enter your choice:");
+							System.out.println("Enter your choice (NUMBER bewtween 1 & 5):");
 							 res=input.nextInt();
 							
 							while(res!=5)
 							{	if(res<1 ||res >5)
-									System.out.println("Please enter between 1 & 5");
+									System.out.println("NOTE: Please enter between 1 & 5");
 								else
 									switch(res)
 									{
 										case 1://Add the file
 												System.out.println("File Name:");
-												fileName=input.next();
+												fileName=input.nextLine();
+												fileName+=input.nextLine();;
 												treeSet.add(fileName);
 												genric.addFile(fileName);
-												System.out.println("added the file :"+fileName);
-												System.out.println("Files in directory: "+treeSet);
+												System.out.println();
+												System.out.println("SUCESSFULLY ADDED THE FILE :"+fileName);
+												System.out.println();
+												System.out.println("Total files now :"+treeSet.size());
+												System.out.println();
+												System.out.println("Files in directory(DESKTOP): "+treeSet);
 												genric.MenuBusinessLogic();
 												break;
 										case 2: //delete the file 
 												System.out.println("Delete file: ");
-												fileName=input.next();
+												fileName=input.nextLine();
+												fileName+=input.nextLine();
+												System.out.println();
 												treeSet.remove(fileName);
 												genric.deleteFile(fileName);
-												System.out.println("remaining Files :"+treeSet);
+												System.out.println();
+												System.out.println("Total files Remaining :"+treeSet.size());
+												System.out.println();
+												System.out.println("Remanining Files(DESKTOP) :"+treeSet);
 												genric.MenuBusinessLogic();
 												break;
 										case 3://search for the file
 												System.out.println("Search file: ");
-												fileName=input.next();
+												fileName=input.nextLine();
+												fileName+=input.nextLine();
+												System.out.println();
 												genric.searchFile(fileName);
 												genric.MenuBusinessLogic();
 												break;
 										case 4://Display file content
 												System.out.println("All files are  shown: ");
 												System.out.println(treeSet);
-												System.out.println("Display file: ");
-												fileName=input.next();
+												System.out.println();
+												System.out.println("Enter Display file Name: ");
+												fileName=input.nextLine();
+												fileName+=input.nextLine();
 												genric.showContent(fileName);
 												System.out.println();
 												genric.MenuBusinessLogic();
@@ -111,7 +122,7 @@ public class MainFunction {
 												break;
 									}
 							
-							System.out.println("Select Option (NUMBER):");
+							System.out.println("Select Option (NUMBER between 1 & 5):");
 							res=input.nextInt();
 							
 							}
@@ -120,11 +131,11 @@ public class MainFunction {
 						}
 						break;
 				
-					default: System.out.println("enter number please");
+					default: System.out.println("enter number please 0 & 2");
 								break;
 					
 				}
-			System.out.println("Select Option(NUMBER): ");
+			System.out.println("Select Option(NUMBER between 0 & 2): ");
 			response=input.nextInt();
 	
 		
@@ -137,7 +148,10 @@ public class MainFunction {
 		
 		finally {
 		if(response==0)
+			{
+			System.out.println();
 			System.out.println("Thank you for using this application. You have been suceesfully EXITED.");
+			}
 			
 		}
 	}

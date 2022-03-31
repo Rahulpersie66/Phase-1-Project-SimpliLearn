@@ -52,7 +52,8 @@ public class FileOutputStreamDemo {
 			fis=new FileInputStream(desktop1);
 			int data;
 			System.out.println("");
-			System.out.println("Content of the file:");
+			System.out.println("CONTENT OF THE FILE:");
+			System.out.println();
 			while((data=fis.read())!=-1)//until file empty
 				System.out.print((char)data);
 		
@@ -83,9 +84,9 @@ public class FileOutputStreamDemo {
 		File f=new File(desktop1);
 		
 		if(f.delete())
-			System.out.println("file deleted succesfully.");
+			System.out.println("FILE DELETED SUCCESFULLY!!");
 		else
-			System.out.println("File not deleted succesfully");
+			System.out.println("NO FILE with name: "+fname+" found on Desktop." );
 	}
 	
 	public void searchFound(String fname)
@@ -94,9 +95,9 @@ public class FileOutputStreamDemo {
 	String desktop1=desktop+"//"+fname;
 		File f=new File(desktop1);
 		if(f.exists())
-			System.out.println("The file " +fname+" is found.");
+			System.out.println("The FILE : " +fname+" is FOUND!!");
 		else
-			System.out.println("The file not found.");
+			System.out.println("There is NO  FILE with SUCH NAME FOUND.");
 		
 	}
 }
